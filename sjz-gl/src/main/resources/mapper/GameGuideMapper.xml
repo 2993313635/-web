@@ -107,7 +107,7 @@
     </select>
 
     <!-- 统计条件查询数量 -->
-    <select id="countByCondition" resultType="long" parameterType="com.boshuo.sjzgl.model.dto.GuideQueryDTO">
+    <select id="countByCondition" resultType="int" parameterType="com.boshuo.sjzgl.model.dto.GuideQueryDTO">
         SELECT COUNT(*)
         FROM guides g
         <where>

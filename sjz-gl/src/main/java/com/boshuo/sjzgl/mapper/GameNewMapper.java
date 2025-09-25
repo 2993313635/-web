@@ -15,7 +15,7 @@ public interface GameNewMapper {
 
     // 条件查询
     List<GameNew> selectByCondition(NewQueryDTO queryDTO);
-    long countByCondition(NewQueryDTO queryDTO);
+    Integer countByCondition(NewQueryDTO queryDTO);
 
     // 首页查询
     List<GameNew> selectLatestNews(int limit);

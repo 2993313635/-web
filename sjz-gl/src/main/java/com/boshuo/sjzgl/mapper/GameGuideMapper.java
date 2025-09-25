@@ -12,16 +12,16 @@ public interface GameGuideMapper {
     // 基础CRUD操作
     int insert(GameGuide gameGuide);
     int update(GameGuide gameGuide);
-    int deleteById(Long id);
+    int deleteById(Integer id);
     GameGuide selectById(Integer id);
 
     // 条件查询
     List<GameGuide> selectByCondition(GuideQueryDTO queryDTO);
-    long countByCondition(GuideQueryDTO queryDTO);
+    int countByCondition(GuideQueryDTO queryDTO);
 
     // 统计操作
-    int incrementViewCount(Long id);
-    int incrementLikeCount(Long id);
+    int incrementViewCount(Integer id);
+    int incrementLikeCount(Integer id);
 
     // 首页推荐查询
     List<GameGuide> selectHotGuides(int limit);      // 热门攻略（按浏览量）
