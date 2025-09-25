@@ -3,11 +3,13 @@ package com.boshuo.sjzgl.model.entity;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class GameCategory {
     private Integer id;
     private String name;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private String status;
+    private Date createdAt;
+    private Date updatedAt;
 }

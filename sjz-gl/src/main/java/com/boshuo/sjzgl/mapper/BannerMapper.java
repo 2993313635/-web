@@ -2,18 +2,14 @@ package com.boshuo.sjzgl.mapper;
 
 import com.boshuo.sjzgl.model.entity.Banner;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 
 @Mapper
 public interface BannerMapper {
-    Banner findById(Integer id);
-    List<Banner> findAll();
-    List<Banner> findActiveBanner();
     int insert(Banner banner);
     int update(Banner banner);
     int deleteById(Integer id);
-    int setBannerActiveStatus(@Param("id") Integer id, @Param("active") Integer active);
-
+    Banner selectById(Integer id);
+    List<Banner> selectActiveBanners();  // 查询激活的Banner
+    int updateStatus(Integer id, Boolean isActive);  // 更新状态
 }

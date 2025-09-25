@@ -3,6 +3,7 @@ package com.boshuo.sjzgl.model.entity;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class GameGuide {
@@ -16,8 +17,10 @@ public class GameGuide {
     private Integer viewCount;
     private Integer likeCount;
     private String status;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private Date createdAt;
+    private Date updatedAt;
+
+    private GameCategory category;
 
     //业务方法
     public boolean isPublished(){
