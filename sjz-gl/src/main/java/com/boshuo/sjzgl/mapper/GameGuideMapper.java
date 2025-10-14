@@ -26,4 +26,7 @@ public interface GameGuideMapper {
     // 首页推荐查询
     List<GameGuide> selectHotGuides(int limit);      // 热门攻略（按浏览量）
     List<GameGuide> selectLatestGuides(int limit);   // 最新攻略
+
+    Long countTotalGuides();
+    Long sumTotalViews();
 }

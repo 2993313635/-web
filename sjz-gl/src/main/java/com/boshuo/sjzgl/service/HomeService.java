@@ -1,6 +1,7 @@
 package com.boshuo.sjzgl.service;
 
 import com.boshuo.sjzgl.model.dto.HomeDataDTO;
+import com.boshuo.sjzgl.model.dto.HomeStatsDTO;
 import com.boshuo.sjzgl.model.entity.Banner;
 import com.boshuo.sjzgl.model.entity.GameGuide;
 import com.boshuo.sjzgl.model.entity.GameNew;
@@ -20,6 +21,11 @@ public class HomeService {
 
     @Autowired
     private GameNewService gameNewService;
+
+    @Autowired
+    private StatsService statsService;
+
+
 
     /**
      * 获取首页数据
@@ -43,6 +49,9 @@ public class HomeService {
             // 获取最新资讯（前5条）
             List<GameNew> latestNews = gameNewService.getLatestNews(5);
             homeData.setLatestNews(latestNews);
+            // 新增：获取统计信息
+            HomeStatsDTO stats = statsService.getHomeStats();
+            homeData.setStats(stats);
 
         } catch (Exception e) {
             // 记录日志，但不要让首页完全失败
@@ -51,6 +60,7 @@ public class HomeService {
             homeData.setHotGuides(List.of());
             homeData.setLatestGuides(List.of());
             homeData.setLatestNews(List.of());
+            homeData.setStats(new HomeStatsDTO());
         }
 
         return homeData;

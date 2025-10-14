@@ -11,5 +11,6 @@ public interface BannerMapper {
     int deleteById(Integer id);
     Banner selectById(Integer id);
     List<Banner> selectActiveBanners();  // 查询激活的Banner
+    List<Banner> selectAll();
     int updateStatus(Integer id, Boolean isActive);  // 更新状态
 }

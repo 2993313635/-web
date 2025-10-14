@@ -28,7 +28,7 @@ public class BannerService {
      */
     public List<Banner> getAllBanners() {
         // 这里可以添加分页逻辑，目前返回所有
-        return getActiveBanners(); // 注意：实际项目中需要添加查询所有Banner的方法
+        return bannerMapper.selectAll();  // 注意：实际项目中需要添加查询所有Banner的方法
     }
 
     /**

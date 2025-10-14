@@ -19,4 +19,6 @@ public interface GameNewMapper {
 
     // 首页查询
     List<GameNew> selectLatestNews(int limit);
+
+    Long countTotalNews();
 }

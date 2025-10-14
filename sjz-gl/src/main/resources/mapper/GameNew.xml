@@ -80,4 +80,8 @@
         LIMIT #{limit}
     </select>
 
+    <select id="countTotalNews" resultType="long">
+        SELECT COUNT(*) FROM game_news
+    </select>
+
 </mapper>

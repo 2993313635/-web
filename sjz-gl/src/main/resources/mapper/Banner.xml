@@ -54,6 +54,15 @@
         ORDER BY id DESC
     </select>
 
+        <!-- 查询所有Banner -->
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM banners
+        ORDER BY id DESC
+    </select>
+
+
+
     <!-- 更新Banner状态 -->
     <update id="updateStatus">
         UPDATE banners SET is_active = #{isActive} WHERE id = #{id}
