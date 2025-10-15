@@ -22,7 +22,7 @@
 
     <!-- 更新分类 -->
     <update id="update" parameterType="com.boshuo.sjzgl.model.entity.GameCategory">
-        UPDATE categories
+        UPDATE game_categories
         <set>
             <if test="name != null">name = #{name},</if>
             <if test="status != null">status = #{status},</if>
@@ -39,21 +39,21 @@
     <!-- 根据ID查询 -->
     <select id="selectById" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
-        FROM categories
+        FROM game_categories
         WHERE id = #{id}
     </select>
 
     <!-- 查询所有分类 -->
     <select id="selectAll" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
-        FROM categories
+        FROM game_categories
         ORDER BY created_at ASC
     </select>
 
     <!-- 查询活跃分类 -->
     <select id="selectActiveCategories" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
-        FROM categories
+        FROM game_categories
         WHERE status = 'ACTIVE'
         ORDER BY created_at ASC
     </select>

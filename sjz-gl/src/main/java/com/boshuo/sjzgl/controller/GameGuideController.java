@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/guides")
+@RequestMapping("/guides")
 @CrossOrigin(origins = "*")
 @Validated
 public class GameGuideController {
